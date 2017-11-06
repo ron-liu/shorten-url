@@ -27,3 +27,22 @@ it('simplest case', async () => {
 	.expect(301)
 	.expect('Location', originalUrl)
 })
+
+it('same original url should return same shortened url', async () => {
+	const shortenedUrl1 = await agent.post('/shorten')
+	.send({url: originalUrl})
+	.expect(200)
+	.then(res => res.body.url)
+	
+	const shortenedUrl2 = await agent.post('/shorten')
+	.send({url: originalUrl})
+	.expect(200)
+	.then(res => res.body.url)
+	
+	expect(shortenedUrl1).toBe(shortenedUrl2)
+})
+
+it('non-existed shortened url should return 404', async() => {
+	await agent.get(`/non-existed`)
+	.expect(404)
+})

@@ -15,7 +15,11 @@ const hashInteger = n => {
 export const shorten = async (req, res) => {
 	invariant(req.body.url, 'url is required in request body')
 	const {url: originalUrl} = req.body
-	const record = await UrlModel.create({originalUrl})
+	const [record, created] = await UrlModel.findOrCreate({where: {originalUrl}, defaults: {originalUrl}})
+	if (!created) {
+		res.send({url: `${Config.urlPrefix}${record.shortenedUrl}`})
+		return
+	}
 	const shortenedUrl = hashInteger(record.id)
 	await UrlModel.update({shortenedUrl}, { where: {id: record.id}})
 	res.send({url: `${Config.urlPrefix}${shortenedUrl}`})

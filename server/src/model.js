@@ -1,6 +1,5 @@
 import Sequelize from 'sequelize'
 import Config from './config'
-console.log('881', Config)
 const {database, username, password, option} = Config.dbConnection
 const sequelize = new Sequelize(database, username, password, option)
 export const UrlModel = sequelize.define('url', {
