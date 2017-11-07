@@ -35,6 +35,6 @@
   "scripts": {
     "test": "jest",
     "build": "babel src --ignore __tests__ --out-dir dist/",
-    "start": "babel-node ./src/index.js"
+    "start": "yarn install && babel-node ./src/index.js"
   }
 }

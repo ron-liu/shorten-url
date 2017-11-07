@@ -9,6 +9,6 @@
     "concurrently": "^3.5.0"
   },
   "scripts": {
-    "start": "concurrently \"cd web; yarn run start\" \"cd server; yarn run start\""
+    "start": "yarn install && concurrently \"cd web; yarn run start\" \"cd server; yarn run start\""
   }
 }
