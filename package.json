@@ -1,0 +1,14 @@
+{
+  "name": "shorten-url",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ron-liu/shorten-url.git",
+  "author": "ronliu <ronliu2k@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "scripts": {
+    "start": "concurrently \"cd web; yarn run start\" \"cd server; yarn run start\""
+  }
+}

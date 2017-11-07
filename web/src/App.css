@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.Shorten {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+input {
+  width: calc(100% - 80px);
+  height: 30px;
+  font-size: 18px;
+}
+
+input.error {
+  border: 1px red solid;
+}
+p.error {
+  color:red;
+  font-size: 12px;
+  margin: 0;
+  text-align: left;
+}
+
+p.shortened {
+  color:brown;
+  font-size: 12px;
+  margin: 0;
+  text-align: left;
+}
+
+button {
+  width: 80px;
+  font-size: 18px;
+}
+
+.History:first-child {
+  border-top: solid black 1px;
+}
+
+.History {
+  padding: 10px;
+  text-align: left;
+  border-bottom: solid black 1px;
+}
+
+.justAdded {
+  background-color: aliceblue;
+}
+
+p.message {
+  margin: 0;
+  height: 20px;
+}

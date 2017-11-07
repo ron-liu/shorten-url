@@ -1,6 +1,6 @@
 const basic = {
-	port: 3000,
-	urlPrefix: 'http://localhost:3000/',
+	port: 3001,
+	urlPrefix: 'http://localhost:3001/',
 	dbConnection:{
 		option: {
 			dialect: 'sqlite',

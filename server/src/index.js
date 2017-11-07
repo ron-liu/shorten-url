@@ -1,5 +1,8 @@
 import Config from './config'
 import {createApp} from "./setup";
 
-const app = createApp()
-app.listen(Config.port)
+createApp()
+.then(app => app.listen(
+	Config.port,
+	() => console.log(`started server at ${Config.port}`))
+)

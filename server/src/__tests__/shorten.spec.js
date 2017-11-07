@@ -6,7 +6,7 @@ import Config from '../config'
 let agent
 const originalUrl = 'http://www.example.com/123456abcdefg'
 beforeEach(async done => {
-	const app = createApp()
+	const app = await createApp()
 	agent = request(app)
 	await sync({force: true})
 	done()
