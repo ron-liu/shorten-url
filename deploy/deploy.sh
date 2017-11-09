@@ -1,15 +1,15 @@
 echo 1>&2 "deploy version: $1"
 ## clean
-rm -rf ./node_modules
-rm -rf ./server/node_modules
-rm -rf ./web/node_modules
-rm -rf ./web/static-server/node_modules
-rm -rf ./server/dist/
-rm -rf ./web/static-server/build
+rm -rf ../node_modules
+rm -rf ../server/node_modules
+rm -rf ../web/node_modules
+rm -rf ../web/static-server/node_modules
+rm -rf ../server/dist/
+rm -rf ../web/static-server/build
 
 ## build docker locally
-docker build -t shorten-server:$1 ./server
-docker build -t shorten-web:$1 ./web
+docker build -t shorten-server:$1 ../server
+docker build -t shorten-web:$1 ../web
 
 # tag
 docker tag shorten-server:$1 nintexregistry.azurecr.io/shorten-server:$1
