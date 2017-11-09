@@ -59,3 +59,4 @@ typings/
 
 /web/static-server/build
 /server/dist/
+junit.xml
