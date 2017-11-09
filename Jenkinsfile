@@ -1,8 +1,9 @@
 pipeline {
 	agent any
 
-    stage('init') {
-        checkout scm
+    stages {
+        stage('init') {
+            checkout scm
+        }
     }
-
 }
