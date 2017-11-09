@@ -9,8 +9,8 @@
     "concurrently": "^3.5.0"
   },
   "scripts": {
-    "start": "yarn install && concurrently \"cd web; yarn run start\" \"cd server; yarn run start\"",
-    "prebuild": "yarn install",
-    "build": "concurrently \"cd web; yarn build\" \"cd server; yarn build\""
+    "start": "npm install && concurrently \"cd web; npm run start\" \"cd server; npm run start\"",
+    "prebuild": "npm install",
+    "build": "concurrently \"cd web; npm build\" \"cd server; npm build\""
   }
 }

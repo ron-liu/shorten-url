@@ -35,8 +35,8 @@
   },
   "scripts": {
     "test": "jest",
-    "prebuild": "yarn install",
+    "prebuild": "npm install",
     "build": "babel src --ignore __tests__ --out-dir dist/",
-    "start": "yarn install && babel-node ./src/index.js"
+    "start": "npm install && babel-node ./src/index.js"
   }
 }
