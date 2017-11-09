@@ -9,14 +9,10 @@ const basic = {
 }
 
 const specifics = {
-	production: {},
-	test: {
-		dbConnection: {
-			option: {
-				dialect: 'sqlite',
-			}
-		}
+	production: {
+		urlPrefix: 'http://s.mashuo.io/',
 	},
+	test: {},
 	dev: {}
 }
 

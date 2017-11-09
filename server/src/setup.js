@@ -34,7 +34,7 @@ const setupErrorHandler = app => {
 
 export const createApp = async () => {
 	console.log('NODE_ENV:', process.env.NODE_ENV)
-	await sync({force: true})
+	await sync()
 	const app = express()
 	setupMiddlewares(app)
 	setupRoutes(app)

@@ -1,0 +1,9 @@
+{
+  "apps": [{
+    "name": "sunshine-web",
+    "script": "./static-server/server.js",
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }]
+}

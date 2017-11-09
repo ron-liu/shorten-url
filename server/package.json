@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
@@ -34,6 +35,7 @@
   },
   "scripts": {
     "test": "jest",
+    "prebuild": "yarn install",
     "build": "babel src --ignore __tests__ --out-dir dist/",
     "start": "yarn install && babel-node ./src/index.js"
   }

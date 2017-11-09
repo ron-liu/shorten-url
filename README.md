@@ -8,10 +8,33 @@ Your solution should include all source code, including tests, hosted on somethi
 * As a user, I want to recover shortened url back to long url so that I can visit the original site;
 * As admin, I want to same long url will be generated the same short urls so that I can save system space;
 
-## Design
-Use key & value to save, so shortened url will be the key and original Url will be the value. 
-So the problem become: given a string, output a short key. 
+## Analysis
+Use simple key & value to save, shortened url will be the key, and original Url will be the value. 
+To simplify, I use the auto-grow integer as internal key, and then use simple algorithm to transfer the integer to key.
 
-To simplify, I want to use the auto-grow integer as internal key, and then use some algorithm to transfer the integer to key.
-Therefor the problem become: given a integer, output a short key.       
+## Database
+I use `sequelize` as the ORM, so it will support any kind of database sequelize supports.
+Only have one table called `url` with three columns: `id`, `originalUrl`, `shortenedUrl`.
+
+## Technologies used
+### server
+* `node.js` `express`
+* `sequelize` with `sqlite`
+* `jest` to test
+* 
+
+## Deployment
+Azure Container Service, and have two services:
+* shorten-server
+* shorten-web
+
+ 
+
+
+
+
+
+
+
+        
   

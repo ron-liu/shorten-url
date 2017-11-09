@@ -13,8 +13,10 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "yarn install && react-scripts start",
-    "build": "react-scripts build",
+    "prestart": "yarn install",
+    "start": "react-scripts start",
+    "prebuild": "yarn install && cd static-server && yarn install",
+    "build": "react-scripts build && rm -rf static-server/build && mv build static-server",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
