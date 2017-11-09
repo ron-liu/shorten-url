@@ -11,6 +11,8 @@
   "scripts": {
     "start": "npm install && concurrently \"cd web; npm run start\" \"cd server; npm run start\"",
     "prebuild": "npm install",
-    "build": "concurrently \"cd web; npm run build\" \"cd server; npm run build\""
+    "build": "concurrently \"cd web; npm run build\" \"cd server; npm run build\"",
+    "test": "concurrently \"cd web; npm run test \" \"cd server; npm run test\"",
+    "test:ci": "concurrently \"cd web; npm run test:ci \" \"cd server; npm run test:ci\""
   }
 }
