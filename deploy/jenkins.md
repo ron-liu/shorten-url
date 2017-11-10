@@ -42,4 +42,4 @@ To add a Microsoft Azure service principal, select Add Credentials. Supply value
 [github repo of the talk above](https://github.com/azure-devops/movie-db-java-on-azure)
 [Where is the generated private ssh key](https://stackoverflow.com/questions/44395863/azure-kubernetes-private-key-location)
 [Troubleshoot Kubernetes Applications](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/)
-[setup github webhook](https://www.youtube.com/watch?v=ke3f3rcRSc8)
+[setup github webhook](https://medium.com/@marc_best/trigger-a-jenkins-build-from-a-github-push-b922468ef1ae)
