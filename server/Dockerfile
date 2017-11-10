@@ -1,4 +1,4 @@
-FROM keymetrics/pm2
+FROM keymetrics/pm2:6
 
 WORKDIR /shorten
 COPY src /shorten/src
