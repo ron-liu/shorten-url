@@ -28,8 +28,7 @@ const App = () => {
 		<Provider store = {store}>
 		<div className="App">
 			<header className="App-header">
-				<h1 className="App-title">Welcome to Shorten Url</h1>
-				<h3 >-- for nintex</h3>
+				<h1 className="App-title">Welcome to Shorten Url   --for nintex</h1>
 			</header>
 			<div className="App-Content">
 				<Shorten/>
