@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: shorten-server
-        image: nintexregistry.azurecr.io/shorten-server
+        image: nintexregistry.azurecr.io/shorten-server:v0.2
         ports:
         - containerPort: 3001
           name: shorten-server
@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: shorten-web
-        image: nintexregistry.azurecr.io/shorten-web
+        image: nintexregistry.azurecr.io/shorten-web:v0.1
         ports:
         - containerPort: 3000
 ---
