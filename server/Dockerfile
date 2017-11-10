@@ -3,7 +3,8 @@ FROM keymetrics/pm2
 WORKDIR /shorten
 COPY dist /shorten/dist
 COPY pm2.json package.json package-lock.json /shorten/
-
+RUN apk update
+RUN apk add python
 RUN npm install --production
 
 EXPOSE 3001
