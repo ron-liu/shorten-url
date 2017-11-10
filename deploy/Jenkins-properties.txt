@@ -1,4 +1,4 @@
-AZURE_CRED_ID=my-azure
-WEB_APP_GROUP=nintex
-WEB_APP_NAME=web-app-shorten
+ACS_CRED_ID=acs-ssh
+ACS_SERVER=shortenau-nintexau-5e1862mgmt.australiasoutheast.cloudapp.azure.com
+ACR_CRED_ID=acr
 ACR_LOGIN_SERVER=nintexregistry.azurecr.io
