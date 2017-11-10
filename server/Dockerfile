@@ -1,7 +1,7 @@
-FROM keymetrics/pm2:6
+FROM keymetrics/pm2
 
 WORKDIR /shorten
-COPY src /shorten/src
+COPY dist /shorten/dist
 COPY pm2.json package.json package-lock.json /shorten/
 
 RUN npm install --production

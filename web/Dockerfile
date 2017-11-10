@@ -1,4 +1,4 @@
-FROM keymetrics/pm2:6
+FROM keymetrics/pm2
 
 RUN mkdir -p /shorten
 WORKDIR /shorten

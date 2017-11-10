@@ -40,3 +40,4 @@ To add a Microsoft Azure service principal, select Add Credentials. Supply value
 [Jenkins World 2017: Azure DevOps Open Source Integrations](https://www.youtube.com/watch?v=buQNF1sekq8)
 [github repo of the talk above](https://github.com/azure-devops/movie-db-java-on-azure)
 [Where is the generated private ssh key](https://stackoverflow.com/questions/44395863/azure-kubernetes-private-key-location)
+[Troubleshoot Kubernetes Applications](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/)
