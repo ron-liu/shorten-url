@@ -2,9 +2,9 @@ FROM keymetrics/pm2
 
 WORKDIR /shorten
 COPY src /shorten/src
-COPY package.json pm2.json yarn.lock /shorten/
+COPY pm2.json package.json package-lock.json /shorten/
 
-RUN yarn build
+RUN npm install --production
 
 EXPOSE 3001
 

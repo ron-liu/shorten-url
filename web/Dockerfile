@@ -3,9 +3,7 @@ FROM keymetrics/pm2
 RUN mkdir -p /shorten
 WORKDIR /shorten
 
-COPY . /shorten
-
-RUN yarn build
+COPY static-server /shorten
 
 EXPOSE 3000
 
