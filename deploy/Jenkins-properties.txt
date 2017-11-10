@@ -1,0 +1,4 @@
+AZURE_CRED_ID=my-azure
+WEB_APP_GROUP=nintex
+WEB_APP_NAME=web-app-shorten
+ACR_LOGIN_SERVER=nintexregistry.azurecr.io
