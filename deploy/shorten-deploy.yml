@@ -1,58 +1,61 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: shorten-server
-spec:
-  replicas: 1
-  template:
+---
+apiVersion: "v1"
+kind: "List"
+items:
+  - apiVersion: extensions/v1beta1
+    kind: Deployment
     metadata:
-      labels:
+      name: shorten-server
+    spec:
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            app: shorten-server
+        spec:
+          containers:
+          - name: shorten-server
+            image: nintexregistry.azurecr.io/shorten-server:v0.2
+            ports:
+            - containerPort: 3001
+              name: shorten-server
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: shorten-server
+    spec:
+      type: LoadBalancer
+      ports:
+      - port: 80
+        targetPort: 3001
+      selector:
         app: shorten-server
-    spec:
-      containers:
-      - name: shorten-server
-        image: nintexregistry.azurecr.io/shorten-server:v0.2
-        ports:
-        - containerPort: 3001
-          name: shorten-server
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: shorten-server
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 3001
-  selector:
-    app: shorten-server
----
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: shorten-web
-spec:
-  replicas: 1
-  template:
+  - apiVersion: extensions/v1beta1
+    kind: Deployment
     metadata:
-      labels:
-        app: shorten-web
+      name: shorten-web
     spec:
-      containers:
-      - name: shorten-web
-        image: nintexregistry.azurecr.io/shorten-web:v0.1
-        ports:
-        - containerPort: 3000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: shorten-web
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 3000
-  selector:
-    app: shorten-web
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            app: shorten-web
+        spec:
+          containers:
+          - name: shorten-web
+            image: nintexregistry.azurecr.io/shorten-web:v0.1
+            ports:
+            - containerPort: 3000
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: shorten-web
+    spec:
+      type: LoadBalancer
+      ports:
+      - port: 80
+        targetPort: 3000
+      selector:
+        app: shorten-web
