@@ -25,6 +25,8 @@ export default (state = initState, action) => {
 	}
 }
 
+export const setError = (message) => ({type: ERROR, message})
+
 export const toShorten = originalUrl => dispatch => {
 	dispatch({type: SHORTENING})
 	return shorten(originalUrl)
@@ -33,5 +35,6 @@ export const toShorten = originalUrl => dispatch => {
 		dispatch(addShortenedUrl({originalUrl, shortenedUrl: url}))
 		setTimeout(() => dispatch({type: READY}), 2000)
 	})
-	.catch(err => dispatch({type: ERROR, message: err.message}))
+	.catch(err => dispatch(setError( err.message)))
 }
+

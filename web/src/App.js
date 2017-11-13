@@ -34,6 +34,9 @@ const App = () => {
 				<Shorten/>
 				<Histories/>
 			</div>
+			<footer className="App-footer">
+				<p>@ Oct, 2017</p>
+			</footer>
 		</div>
 		</Provider>
 	);

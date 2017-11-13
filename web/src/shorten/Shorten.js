@@ -1,7 +1,7 @@
 import React from'react'
 import {connect} from 'react-redux'
 import {withState, withHandlers, compose} from 'recompose'
-import {toShorten} from "./shorten.duck";
+import {setError, toShorten} from "./shorten.duck";
 import classnames from 'classnames'
 
 const Message = ({status, message}) => (
@@ -27,21 +27,41 @@ const Shorten = props => {
 	)
 }
 
+const validate = url => {
+	if (typeof url !== 'string') {
+		return 'please enter a url'
+	}
+	url = url.trim()
+	if (!url) {
+		return 'please enter a url'
+	}
+	const urlReg = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})$/
+	if (!urlReg.test(url)) {
+		return 'please enter a valid url'
+	}
+	return null
+}
+
 export default compose(
 	withState('state', 'setState', {inputtedUrl: ''}),
 	connect(
 		state => ({...state.shorten}),
 		dispatch => ({
-			shorten: url => dispatch(toShorten(url))
+			shorten: url => dispatch(toShorten(url)),
+			setError: message => dispatch(setError(message))
 		})
 	),
 	withHandlers({
 		onChange: props => event => props.setState({inputtedUrl: event.target.value}),
 		onSubmit: props => event => {
-			const { state: {inputtedUrl}, shorten} = props
-			
-			shorten(inputtedUrl)
 			event.preventDefault();
+			const { state: {inputtedUrl}, shorten, setError} = props
+			const error = validate(inputtedUrl)
+			if (error) {
+				setError(error)
+				return;
+			}
+			shorten(inputtedUrl)
 		}
 	})
 )(Shorten)
