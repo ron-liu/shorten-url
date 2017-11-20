@@ -1,6 +1,6 @@
 # Code Challenge
 ## Result
-- Check [runtime](http://shorten.mashuo.io)
+- ~~Check [runtime](http://shorten.mashuo.io)~~ The server has been shut down
 - Achieved CI/CD: git push will automatically trigger the whole build/test/deploy process, see: ![jenkins portal](deploy/jenkins.png)
 
 ## Requirements
